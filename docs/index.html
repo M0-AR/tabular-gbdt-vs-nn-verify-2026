@@ -188,16 +188,15 @@ docker compose run --rm bench-fast    # same, containerised</pre>
 </section>
 
 <section id="pages" class="card">
-<h2>🌐 GitHub Pages — show this page as the repo website (2026)</h2>
-<p>This file <i>is</i> the website. To publish it:</p>
-<ol>
-<li>Push this repo to GitHub (keep the <code>docs/</code> folder with <code>preview.html</code>, <code>index.html</code>, <code>demo.gif</code>, PNGs, <code>assets.json</code>).</li>
-<li>Open <b>Settings → Pages → Build and deployment → Deploy from a branch</b>.</li>
-<li>Select branch <b>main</b> (or <b>master</b>) and folder <b>/docs</b>, then <b>Save</b>.</li>
-<li>Wait ~1 minute. Your site appears at <code>https://&lt;user&gt;.github.io/&lt;repo&gt;/preview.html</code> (root <code>index.html</code> mirrors it).</li>
-<li>Optional: add a custom domain under <b>Settings → Pages → Custom domain</b> (HTTPS is automatic).</li>
-</ol>
-<p class="mut">Why <code>/docs</code>? It is the built-in branch mode — no Actions workflow needed. The page is dependency-free (inline CSS/JS, relative asset paths) so it renders identically locally (<code>python3 -m http.server</code> in <code>docs/</code>) and on Pages.</p>
+<h2>🌐 GitHub Pages — open the live site</h2>
+<p>This file <i>is</i> the website. One click each:</p>
+<ul>
+<li>🌍 <a href="https://m0-ar.github.io/tabular-gbdt-vs-nn-verify-2026/">m0-ar.github.io/tabular-gbdt-vs-nn-verify-2026/</a> — entry</li>
+<li>🌍 <a href="https://m0-ar.github.io/tabular-gbdt-vs-nn-verify-2026/preview.html">…/preview.html</a> — full report</li>
+<li>🌍 <a href="https://m0-ar.github.io/tabular-gbdt-vs-nn-verify-2026/docs/preview.html">…/docs/preview.html</a> — same page via repo path</li>
+</ul>
+<p>To publish it yourself: push this repo → <b>Settings → Pages → Build and deployment → Deploy from a branch</b> → branch <b>main</b>, folder <b>/docs</b> (recommended) → Save → wait ~1 minute. Root mirrors (<code>preview.html</code>, <code>index.html</code>, <code>.nojekyll</code>) mean <code>/</code> also works if Pages is set to source <code>/</code> (root).</p>
+<p class="mut">Why did a green “Deployed” ever show a 404? A green build only proves <i>something</i> built — URLs mirror the repo path <i>under the chosen source</i>: source <code>/docs</code> serves <code>docs/x.html</code> at <code>/x.html</code>; source <code>/</code> serves it at <code>/docs/x.html</code>. Diagnose with three probes (<code>/</code>, <code>/preview.html</code>, <code>/docs/preview.html</code>): all-200 means done; <code>/preview.html</code>=404 + <code>/docs/preview.html</code>=200 means the source is root. Custom domain optional (HTTPS automatic).</p>
 </section>
 
 <section id="faq" class="card">

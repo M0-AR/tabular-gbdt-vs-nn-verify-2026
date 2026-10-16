@@ -7,7 +7,13 @@
 [![Docker ready](https://img.shields.io/badge/Docker-ready-blue.svg)](docker-compose.yml)
 [![Pages ready](https://img.shields.io/badge/GitHub_Pages-docs%2Fpreview.html-orange.svg)](docs/preview.html)
 
-**🌐 Live interactive report (no install): open [`docs/preview.html`](docs/preview.html)** — playground sliders, 8-question quiz, all charts. Publish it as your repo website in 1 minute: GitHub → Settings → Pages → *Deploy from a branch* → branch `main`, folder `/docs` → open `https://<user>.github.io/<repo>/preview.html` (HTTPS automatic; custom domain optional). Local preview: `python3 -m http.server` inside `docs/`.
+**🌐 Live interactive report (no install): open [`docs/preview.html`](docs/preview.html)** — playground sliders, 8-question quiz, all charts. On the published site it is one click:
+
+- 🌍 [`https://m0-ar.github.io/tabular-gbdt-vs-nn-verify-2026/`](https://m0-ar.github.io/tabular-gbdt-vs-nn-verify-2026/) — entry (works under either Pages source)
+- 🌍 [`https://m0-ar.github.io/tabular-gbdt-vs-nn-verify-2026/preview.html`](https://m0-ar.github.io/tabular-gbdt-vs-nn-verify-2026/preview.html) — full report
+- 🌍 [`https://m0-ar.github.io/tabular-gbdt-vs-nn-verify-2026/docs/preview.html`](https://m0-ar.github.io/tabular-gbdt-vs-nn-verify-2026/docs/preview.html) — same page via repo path
+
+Publish it in 1 minute: GitHub → Settings → Pages → *Deploy from a branch* → branch `main`, folder `/docs` (recommended; root mirrors make `/` work too). Local preview: click `docs/preview.html` here, or `python3 -m http.server` inside `docs/`.
 
 ![Interactive site hero](docs/screenshot.png)
 *The interactive site: CEO summary, playground, quiz, results. Screenshot verified via Chromium (`docs/screenshot.png`).*
@@ -59,7 +65,7 @@ python3 -m pytest tests/ -v         # 3 passed
 | Live-market tasks | BTC + FX lag/return/vol → next-return, mean baseline included |
 | VERIFY gate | `experiments.py` exits nonzero on claim drift (CI-ready) |
 | Visuals | `docs/depth.png`, `boost_curve.png`, `noise_rotation.png`, `demo.gif`, `screenshot.png` — all generated |
-| Interactive site | `docs/preview.html` (+ `index.html` mirror, `.nojekyll`): playground + quiz + Pages-ready |
+| Interactive site | `docs/preview.html` (+ `docs/index.html`, root `preview.html` + `index.html` mirrors, `.nojekyll` ×2): playground + quiz, every URL works under either Pages source |
 
 | You are… | Use it to… |
 |---|---|
