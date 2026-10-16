@@ -1,0 +1,11 @@
+services:
+  bench:
+    build: .
+    volumes:
+      - ./results:/work/results
+    command: python3 src/experiments.py --full
+  bench-fast:
+    build: .
+    volumes:
+      - ./results:/work/results
+    command: python3 src/experiments.py --fast
